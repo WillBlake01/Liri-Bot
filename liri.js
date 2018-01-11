@@ -44,3 +44,13 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
   }
 });
 // End Twitter API call
+
+// Begin omdb API call
+request("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy", function(error, response, body) {
+
+  if (!error && response.statusCode === 200) {
+
+    console.log("The movie's rating is: " + JSON.parse(body).imdbRating);
+  }
+});
+// End omdb API call
