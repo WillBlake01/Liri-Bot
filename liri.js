@@ -1,21 +1,35 @@
+// node requirements
 require('dotenv').config()
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require('request');
 
+var userSearch = process.argv;
+
+var songName = "";
+
+for (i = 2; i < userSearch.length; i++) {
+
+  songName = songName + " " + userSearch[i];
+
+}
+
+// Begin Spotify API call
 var spotify = new Spotify({
   id: process.env.SPOTIFY_ID,
   secret: process.env.SPOTIFY_SECRET
 });
 
-spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+spotify.search({ type: 'track', query: songName, limit: 1 }, function (err, data) {
   if (err) {
     return console.log('Error occurred: ' + err);
   }
 
-console.log(data);
+  console.log(JSON.stringify(data, null, 2));
 });
+//End Spotify API call
 
+// Begin Twitter API call
 var client = new Twitter({
   consumer_key: process.env.TWITTER_CONSUMER_KEY,
   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
@@ -29,3 +43,4 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
     console.log(tweets);
   }
 });
+// End Twitter API call
