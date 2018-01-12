@@ -59,7 +59,14 @@ switch(userCommand) {
 
           if (!error && response.statusCode === 200) {
 
-            console.log("The movie's rating is: " + JSON.parse(body).imdbRating);
+            console.log("Title: " + JSON.parse(body).Title);
+            console.log("Year: " + JSON.parse(body).Year);
+            console.log("imdb Rating: " + JSON.parse(body).imdbRating);
+            console.log("Rotten Tomatoe Score: " + JSON.parse(body).Ratings.Value);
+            console.log("Country Produced: " + JSON.parse(body).Production);
+            console.log("Language: " + JSON.parse(body).Language);
+            console.log("Plot: " + JSON.parse(body).Plot);
+            console.log("Actors: " + JSON.parse(body).Actors);
           }
         });
         // End omdb API call
