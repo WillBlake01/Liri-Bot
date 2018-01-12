@@ -30,7 +30,11 @@ switch (userCommand) {
         return console.log('Error occurred: ' + err);
       }
 
-      console.log(JSON.stringify(data, null, 2));
+      console.log(JSON.stringify('Artist: ' + data.tracks.items[0].artists[0].name, null, 2) +
+      '\nTrack: ' + JSON.stringify(data.tracks.items[0].name, null, 2) +
+      '\nPreview Link: ' + JSON.stringify(data.tracks.items[0].preview_url, null, 2) +
+      '\nAlbum: ' + JSON.stringify(data.tracks.items[0].album.name, null, 2)) +
+      console.log('\n-------------\n');
     });
 
     //End Spotify API call
@@ -74,8 +78,8 @@ switch (userCommand) {
       if (!error && response.statusCode === 200) {
 
         console.log('Title: ' + JSON.parse(body).Title + '\nYear: ' + JSON.parse(body).Year +
-         '\nimdb Rating: ' + JSON.parse(body).imdbRating + '\nRotten Tomatoe Score: ' +
-        JSON.parse(body).Ratings + '\nCountry Produced: ' + JSON.parse(body).Production +
+        '\nimdb Rating: ' + JSON.parse(body).imdbRating + '\nRotten Tomatoe Score: ' +
+        JSON.parse(body).Ratings[1].Value + '\nCountry Produced: ' + JSON.parse(body).Country +
         '\nLanguage: ' + JSON.parse(body).Language + 'Plot: ' + JSON.parse(body).Plot +
         '\nActors: ' + JSON.parse(body).Actors);
         console.log('\n-------------\n');
