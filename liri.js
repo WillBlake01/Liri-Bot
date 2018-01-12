@@ -6,6 +6,15 @@ var request = require('request');
 
 var userCommand = process.argv[2];
 var userQuery = process.argv[3];
+// var movieSearch = userQuery;
+//
+// var movieName = "";
+//
+// for (i = 2; i < movieSearch.length; i++) {
+//
+//   movieName = movieName + " " + movieSearch[i];
+//
+// }
 
 switch(userCommand) {
     case('spotify-this-song'):
@@ -13,9 +22,9 @@ switch(userCommand) {
 
     var songName = "";
 
-    for (i = 2; i < trackSearch.length; i++) {
+    for (i = 0; i < trackSearch.length; i++) {
 
-      songName = songName + " " + trackSearch[i];
+      songName = songName + trackSearch[i];
 
     }
       // Begin Spotify API call
@@ -54,6 +63,14 @@ switch(userCommand) {
 
       case('movie-this'):
       var movieSearch = userQuery;
+
+      var movieName = "";
+
+      for (i = 2; i < movieSearch.length; i++) {
+
+        movieName = movieName + " " + movieSearch[i];
+
+      }
         // Begin omdb API call
         request("http://www.omdbapi.com/?t=" + movieSearch + "&y=&plot=short&apikey=trilogy", function(error, response, body) {
 
