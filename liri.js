@@ -66,9 +66,9 @@ switch(userCommand) {
 
       var movieName = "";
 
-      for (i = 2; i < movieSearch.length; i++) {
+      for (i = 0; i < movieSearch.length; i++) {
 
-        movieName = movieName + " " + movieSearch[i];
+        movieName = movieName + movieSearch[i];
 
       }
         // Begin omdb API call
