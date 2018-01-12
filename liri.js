@@ -53,8 +53,9 @@ switch(userCommand) {
         break;
 
       case('movie-this'):
+      var movieSearch = userQuery;
         // Begin omdb API call
-        request("http://www.omdbapi.com/?t=remember+the+titans&y=&plot=short&apikey=trilogy", function(error, response, body) {
+        request("http://www.omdbapi.com/?t=" + movieSearch + "&y=&plot=short&apikey=trilogy", function(error, response, body) {
 
           if (!error && response.statusCode === 200) {
 
