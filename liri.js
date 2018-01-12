@@ -59,14 +59,11 @@ switch(userCommand) {
 
           if (!error && response.statusCode === 200) {
 
-            console.log("Title: " + JSON.parse(body).Title);
-            console.log("Year: " + JSON.parse(body).Year);
-            console.log("imdb Rating: " + JSON.parse(body).imdbRating);
-            console.log("Rotten Tomatoe Score: " + JSON.parse(body).Ratings.Value);
-            console.log("Country Produced: " + JSON.parse(body).Production);
-            console.log("Language: " + JSON.parse(body).Language);
-            console.log("Plot: " + JSON.parse(body).Plot);
-            console.log("Actors: " + JSON.parse(body).Actors);
+            console.log("Title: " + JSON.parse(body).Title + "\nYear: " + JSON.parse(body).Year + "\nimdb Rating: " +
+            JSON.parse(body).imdbRating + "\nRotten Tomatoe Score: " + JSON.parse(body).Ratings + "\nCountry Produced: " +
+            JSON.parse(body).Production + "\nLanguage: " + JSON.parse(body).Language + "Plot: " + JSON.parse(body).Plot +
+            "\nActors: " + JSON.parse(body).Actors);
+            console.log("\n-------------\n");
           }
         });
         // End omdb API call
