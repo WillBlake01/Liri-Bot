@@ -3,6 +3,7 @@ require('dotenv').config();
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require('request');
+var fs = require('file-system');
 
 var userCommand = process.argv[2];
 var userQuery = process.argv[3];
@@ -89,6 +90,13 @@ switch (userCommand) {
     });
 
     // End omdb API call
+    break;
+
+  case ('do-what-it-says'):
+    fs.readFile('random.txt', 'utf-8', function (err, data) {
+      console.log(data);
+    });
+
     break;
   default:
     console.log('failure');
