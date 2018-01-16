@@ -94,7 +94,16 @@ switch (userCommand) {
 
   case ('do-what-it-says'):
     fs.readFile('random.txt', 'utf-8', function (err, data) {
-      console.log(data);
+      if (err) {
+        return console.log(error);
+      }
+
+      var dataArr = data.split(',');
+
+      for (item of dataArr) {
+
+        console.log(item.trim());
+      }
     });
 
     break;
