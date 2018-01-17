@@ -1,5 +1,6 @@
 // node requirements
 require('dotenv').config();
+var Keys = require('./keys.js');
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require('request');
@@ -56,7 +57,45 @@ switch (userCommand) {
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
       if (!error) {
         console.log(tweets[0].text);
+        console.log(tweets[0].created_at);
+        console.log(tweets[1].text);
         console.log(tweets[1].created_at);
+        console.log(tweets[2].text);
+        console.log(tweets[2].created_at);
+        console.log(tweets[3].text);
+        console.log(tweets[3].created_at);
+        console.log(tweets[4].text);
+        console.log(tweets[4].created_at);
+        console.log(tweets[5].text);
+        console.log(tweets[5].created_at);
+        console.log(tweets[6].text);
+        console.log(tweets[6].created_at);
+        console.log(tweets[7].text);
+        console.log(tweets[7].created_at);
+        console.log(tweets[8].text);
+        console.log(tweets[8].created_at);
+        console.log(tweets[9].text);
+        console.log(tweets[9].created_at);
+        console.log(tweets[10].text);
+        console.log(tweets[10].created_at);
+        console.log(tweets[11].text);
+        console.log(tweets[11].created_at);
+        console.log(tweets[12].text);
+        console.log(tweets[12].created_at);
+        console.log(tweets[13].text);
+        console.log(tweets[13].created_at);
+        console.log(tweets[14].text);
+        console.log(tweets[14].created_at);
+        console.log(tweets[15].text);
+        console.log(tweets[15].created_at);
+        console.log(tweets[16].text);
+        console.log(tweets[16].created_at);
+        console.log(tweets[17].text);
+        console.log(tweets[17].created_at);
+        console.log(tweets[18].text);
+        console.log(tweets[18].created_at);
+        console.log(tweets[19].text);
+        console.log(tweets[19].created_at);
       }
     });
 
