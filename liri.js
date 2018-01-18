@@ -1,12 +1,12 @@
 // node requirements
 require('dotenv').config();
-var Keys = require('./keys.js');
+var keys = require('./keys.js');
 var Twitter = require('twitter');
 var Spotify = require('node-spotify-api');
 var request = require('request');
 var fs = require('file-system');
-// var spotify = new Spotify(keys.spotify);
-// var client = new Twitter(keys.twitter);
+var spotify = new Spotify(keys.spotify);
+var client = new Twitter(keys.twitter);
 
 var userCommand = process.argv[2];
 var userQuery = process.argv[3];
@@ -22,12 +22,6 @@ switch (userCommand) {
       songName = songName + trackSearch[i];
 
     }
-
-    // Begin Spotify API call
-    var spotify = new Spotify({
-      id: process.env.SPOTIFY_ID,
-      secret: process.env.SPOTIFY_SECRET
-    });
 
     spotify.search({ type: 'track', query: songName, limit: 1 }, function (err, data) {
       if (err) {
@@ -47,20 +41,14 @@ switch (userCommand) {
   case ('my-tweets'):
 
     // Begin Twitter API call
-    var client = new Twitter({
-      consumer_key: process.env.TWITTER_CONSUMER_KEY,
-      consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-      access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
-      access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-    });
-
     var params = { totes_gnar: 'nodejs' };
 
     client.get('statuses/user_timeline', params, function (error, tweets, response) {
       if (!error) {
-        for (var i=0; i < tweets.length; i++) {
-          console.log(tweets[i].created_at);
+        for (var i = 0; i < tweets.length; i++) {
           console.log(tweets[i].text);
+          console.log(tweets[i].created_at);
+          console.log('-------------');
         }
       }
     });
