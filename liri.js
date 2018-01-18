@@ -73,7 +73,9 @@ switch (userCommand) {
     request('http://www.omdbapi.com/?t=' + movieSearch + '&y=&plot=short&apikey=trilogy',
     function (error, response, body) {
 
-      if (!error && response.statusCode === 200) {
+      if (error) {
+        console.log(error);
+      } else if (!error && response.statusCode === 200) {
 
         console.log('Title: ' + JSON.parse(body).Title + '\nYear: ' + JSON.parse(body).Year +
         '\nimdb Rating: ' + JSON.parse(body).imdbRating + '\nRotten Tomatoe Score: ' +
