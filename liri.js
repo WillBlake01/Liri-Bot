@@ -91,13 +91,14 @@ switch (userCommand) {
     fs.readFile('random.txt', 'utf-8', function (err, data) {
       if (err) {
         return console.log(error);
-      }
+      }else if (!err) {
 
-      var dataArr = data.split(',');
+        var dataArr = data.split(',');
 
-      for (item of dataArr) {
+        for (item of dataArr) {
 
-        console.log(item.trim());
+          console.log(item.trim());
+        }
       }
     });
 
