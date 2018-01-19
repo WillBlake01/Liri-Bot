@@ -1,5 +1,3 @@
-#liri-node-app
-
 # Welcome to Liri Node Bot!
 
 *What does it do?*<br>Liri is a Command Line Interface (CLI) Node application that will take in parameters and give back data. It's core features include: Displaying the 20 most recent tweets and timestamp, retreiving spotify track information and retreiving omdb movie information. 
