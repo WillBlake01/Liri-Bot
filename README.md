@@ -10,6 +10,8 @@ node liri.js spotify-this-song 'song name here'<br>
 node liri.js movie-this 'movie name here'<br>
 node liri.js do-what-it-says<br>
 
-*Where can I get help?*<br>For help regarding the Node runtime environment please reference the documentation here [https://nodejs.org/en/](https://nodejs.org/en/). For app specific help please message the address below.
+*Where can I get help?*<br>
+For help regarding the Node runtime environment please reference the documentation here [https://nodejs.org/en/](). For app specific help please message the address below.
 
-*Who maintains and contributes to this project?*<br>This project was created and maintained by William Blake. Any requests should be forwarded to [willblakebooking@gmail.com]().
+*Who maintains and contributes to this project?*<br>
+This project was created by and is maintained by William Blake. Any requests should be forwarded to willblakebooking@gmail.com. Connect with me on [LinkedIn](https://www.linkedin.com/in/william-blake/) or [GitHub](https://github.com/WillBlake01).
