@@ -1,0 +1,27 @@
+{
+  "name": "Liri-Bot",
+  "version": "1.0.0",
+  "description": "*What does it do?*<br>Liri is a Command Line Interface (CLI) Node application that will take in parameters and give back data. It's core features include: Displaying the 20 most recent tweets and timestamp, retreiving spotify track information and retreiving omdb movie information.",
+  "main": "keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WillBlake01/Liri-Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WillBlake01/Liri-Bot/issues"
+  },
+  "homepage": "https://github.com/WillBlake01/Liri-Bot#readme",
+  "dependencies": {
+    "dotenv": "^5.0.0",
+    "file-system": "^2.2.2",
+    "node-spotify-api": "^1.0.7",
+    "request": "^2.83.0",
+    "twitter": "^1.7.1"
+  }
+}
